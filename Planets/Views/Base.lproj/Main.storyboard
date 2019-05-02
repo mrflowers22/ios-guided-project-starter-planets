@@ -78,45 +78,57 @@
             </objects>
             <point key="canvasLocation" x="1669.5652173913045" y="128.57142857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="rqy-UH-lLm">
             <objects>
-                <viewController id="8Va-8m-1q2" sceneMemberID="viewController">
+                <viewController id="8Va-8m-1q2" customClass="SettingsViewController" customModule="Planets" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FYP-GG-2QP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wGw-bh-Rfz">
-                                <rect key="frame" x="111" y="323" width="187" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wGw-bh-Rfz">
+                                <rect key="frame" x="16" y="432.5" width="382" height="31"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Pluto a planet?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3g-Cp-OOA">
-                                        <rect key="frame" x="0.0" y="0.0" width="130" height="31"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Should Pluto be a planet?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3g-Cp-OOA">
+                                        <rect key="frame" x="0.0" y="0.0" width="305" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JEV-Ws-OPI">
-                                        <rect key="frame" x="138" y="0.0" width="51" height="31"/>
+                                        <rect key="frame" x="313" y="0.0" width="71" height="31"/>
+                                        <connections>
+                                            <action selector="plutoSwitchToggled:" destination="8Va-8m-1q2" eventType="valueChanged" id="Xm4-bl-Kki"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJE-0e-vPB">
                                 <rect key="frame" x="357" y="64" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="8Va-8m-1q2" eventType="touchUpInside" id="3RJ-i9-4Tf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gJE-0e-vPB" firstAttribute="top" secondItem="cO3-Qx-aUA" secondAttribute="top" constant="20" id="09q-zv-sPT"/>
+                            <constraint firstItem="wGw-bh-Rfz" firstAttribute="centerY" secondItem="FYP-GG-2QP" secondAttribute="centerY" id="1hU-Jo-RTa"/>
+                            <constraint firstItem="wGw-bh-Rfz" firstAttribute="leading" secondItem="cO3-Qx-aUA" secondAttribute="leading" constant="16" id="JGZ-fe-R5M"/>
                             <constraint firstItem="cO3-Qx-aUA" firstAttribute="trailing" secondItem="gJE-0e-vPB" secondAttribute="trailing" constant="20" id="ehz-Y9-p0L"/>
+                            <constraint firstItem="wGw-bh-Rfz" firstAttribute="centerX" secondItem="FYP-GG-2QP" secondAttribute="centerX" id="gjK-PZ-dmx"/>
+                            <constraint firstItem="cO3-Qx-aUA" firstAttribute="trailing" secondItem="wGw-bh-Rfz" secondAttribute="trailing" constant="16" id="xgf-iX-XQU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cO3-Qx-aUA"/>
                     </view>
+                    <connections>
+                        <outlet property="shouldShowPlutoSwitch" destination="JEV-Ws-OPI" id="kF9-rG-eqT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tOo-jG-K9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2377" y="126"/>
+            <point key="canvasLocation" x="2323" y="129"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xSS-MD-hc0">
@@ -134,7 +146,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yr9-5g-8Ao" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="759.4202898550725" y="128.57142857142856"/>
+            <point key="canvasLocation" x="1012" y="129"/>
         </scene>
     </scenes>
 </document>
